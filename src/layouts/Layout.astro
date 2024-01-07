@@ -1,0 +1,102 @@
+---
+import NextNavbar from "@components/NextNavbar";
+import "@fontsource-variable/inter-tight";
+import "@fontsource-variable/onest";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Metadata for open graph images -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og.png" />
+    <meta
+      property="og:image:alt"
+      content="Logo de Teclearla - Desarrollamos tu pagina web"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teclearla.com.ar" />
+    <meta property="og:site_name" content="Teclearla" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/og.png" />
+    <meta name="twitter:image:alt" content="Logo de Teclearla" />
+    <!-- Meta for robots -->
+    <meta name="robots" content="index, follow" />
+    <!-- Meta for SEO -->
+    <meta name="author" content="Teclearla" />
+    <meta
+      name="keywords"
+      content="Teclearla, desarrolla tu sitio web, web, quiero mi pagina web, pagina web,  tener tu pagina web nunca fue tan fácil, hacer mi pagina web, pagina web barata, pagina web fácil, pagina web calidad, hacemos tu pagina web, pagina web profesional, pagina web profesional barata, pagina web profesional fácil, pagina web profesional calidad, pagina web profesional barata fácil, pagina web profesional barata calidad, pagina web profe, teclearla, teclearla villa maria"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+
+  <body
+    class="w-full min-h-screen bg-[#1A2530] dark animate-fade animate-ease-in"
+  >
+    <!-- <div
+      class="absolute top-0 w-full h-full bg-gradient-to-t from-transparent via-black/20 to-black/80"
+    >
+    </div> -->
+    <!-- <Navbar /> -->
+    <NextNavbar client:visible />
+    <slot />
+  </body>
+
+  <style is:global>
+    html {
+      font-family: "Inter Tight Variable", system-ui, sans-serif;
+      background-color: white;
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    @font-face {
+      font-family: Franie;
+      src: url("../../fonts/Franie.woff2") format("opentype");
+      font-display: swap;
+    }
+
+    #navbar {
+      animation: blur linear both;
+      animation-timeline: scroll();
+      animation-range: 0 500px;
+    }
+
+    @keyframes blur {
+      to {
+        box-shadow:
+          0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+          0px 0px 0 1px rgba(0, 0, 0, 0.3);
+        background: #0f1820;
+        backdrop-filter: blur(10px);
+      }
+    }
+
+    ul {
+      justify-content: end !important;
+    }
+
+    #navmenu {
+      justify-content: flex-start !important;
+    }
+
+    header {
+      max-width: 1400px !important;
+    }
+  </style>
+</html>

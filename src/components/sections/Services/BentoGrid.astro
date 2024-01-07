@@ -1,0 +1,52 @@
+---
+import CodeIcon from "@components/icons/CodeIcon.astro";
+import CommunicationIcon from "@components/icons/CommunicationIcon.astro";
+import HighlightIcon from "@components/icons/HighlightIcon.astro";
+import UpdateIcon from "@components/icons/UpdateIcon.astro";
+import Paragraph from "@components/ui/Paragraph.astro";
+import BentoItem from "./BentoItem.astro";
+
+const ITEMS = [
+  {
+    title: "Diseño de alta calidad",
+    description:
+      "Todas nuestras paginas son diseñadas con los mejores estándares de calidad y usabilidad. Nos gusta que nuestros clientes se sientan orgullosos de su sitio web.",
+    icon: HighlightIcon,
+    colspan: 1,
+  },
+  {
+    title: "Comunicación asíncrona",
+    description:
+      "Nos gusta evitar las reuniones innecesarias. Por eso nos comunicamos con nuestros clientes mediante redes sociales como WhatsApp, Instagram o Email. ",
+    icon: CommunicationIcon,
+    colspan: 1,
+  },
+  {
+    title: "Actualizaciones diarias",
+    description:
+      "Conseguí actualizaciones diarias de tu proyecto via Email, WhatsApp o Instagram. Nos gusta mantener a nuestros clientes al tanto de los avances de su proyecto.",
+    icon: UpdateIcon,
+    colspan: 1,
+  },
+  {
+    title: "Últimas tecnologías",
+    description:
+      "Nos aferramos a la idea de que todos los días hay que aprender algo nuevo. Por eso nos mantenemos actualizados con las ultimas tecnologías del mercado.",
+    icon: CodeIcon,
+    colspan: 1,
+  },
+];
+---
+
+<article class="grid grid-cols-2 gap-4">
+  {
+    ITEMS.map((item, i) => {
+      return (
+        <BentoItem {...item} index={i}>
+          <item.icon slot="icon" />
+          <Paragraph addClass="max-w-[50ch]">{item.description}</Paragraph>
+        </BentoItem>
+      );
+    })
+  }
+</article>

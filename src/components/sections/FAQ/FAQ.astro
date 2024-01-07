@@ -1,0 +1,40 @@
+---
+import { FAQAccordion } from "@components/FAQAccordion";
+import Header from "@components/ui/Header.astro";
+---
+
+<section class="relative bg-[#fefefe] mt-6" id="faq">
+  <div class="absolute top-0">
+    <img
+      src="https://framerusercontent.com/images/KlYNGGjT9LOLlcY9OzDYRgWWtA.svg"
+      alt=""
+      style="display:block;width:100vw;border-radius:inherit;object-position:center"
+      class="bg-contain !h-12"
+      loading="lazy"
+    />
+  </div>
+
+  <article class="mt-24 container flex flex-col gap-4">
+    <Header
+      title="Preguntas frecuentes"
+      class={"!text-black"}
+      subtitle="Preguntas frecuentes"
+      addSubtitleClass="!text-blue-500"
+    />
+    <div class="grid grid-cols-1 gap-4">
+      <div class="mb-24 w-full h-full">
+        <FAQAccordion client:visible />
+      </div>
+    </div>
+  </article>
+
+  <div class="absolute bottom-0">
+    <img
+      alt=""
+      src="https://framerusercontent.com/images/riJb9NUi8PEIYMbien4HXKAV8.svg"
+      style="display:block;width:100vw;height:50px;border-radius:inherit;object-position:center"
+      class="bg-contain !h-12"
+      loading="lazy"
+    />
+  </div>
+</section>

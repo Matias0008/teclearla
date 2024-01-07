@@ -1,0 +1,25 @@
+---
+import Contact from "@components/sections/Contact/Contact.astro";
+import FAQ from "@components/sections/FAQ/FAQ.astro";
+import Footer from "@components/sections/Footer/Footer.astro";
+import Hero from "@components/sections/Hero/Hero.astro";
+import Services from "@components/sections/Services/Services.astro";
+import Webs from "@components/sections/Webs/Webs.astro";
+import WorkDetail from "@components/sections/WorkDetail/WorkDetail.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout
+  title="Teclearla | Desarrollar tu web nunca fue tan fácil"
+  description="Desarrollamos tu página web a medida con un diseño único y adaptado a tus necesidades. Creamos sitios que generan futuro."
+>
+  <main class="flex flex-col w-full">
+    <Hero />
+    <WorkDetail />
+    <Services />
+    <Webs />
+    <FAQ />
+    <Contact />
+    <Footer />
+  </main>
+</Layout>

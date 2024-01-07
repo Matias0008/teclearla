@@ -1,0 +1,21 @@
+---
+import { Link } from "@nextui-org/react";
+
+interface Props {
+  addClass?: string;
+  content: string;
+  href: string;
+  size?: "sm" | "md" | "lg";
+}
+
+const { size = "lg", addClass = "", href, content } = Astro.props;
+---
+
+<Link
+  className={`cursor-pointer z-10 text-white bg-primary px-12 py-4 rounded-xl text-xl sm:max-w-[300px] ${addClass} justify-center`}
+  client:visible
+  href={href}
+  size={size}
+>
+  {content}
+</Link>

@@ -1,0 +1,77 @@
+---
+import { NAV_LINKS } from "@components/NextNavbar";
+import InstagramIcon from "@components/icons/InstagramIcon.astro";
+import MailIcon from "@components/icons/MailIcon.astro";
+import Paragraph from "@components/ui/Paragraph.astro";
+import { Divider } from "@nextui-org/react";
+---
+
+<footer
+  class="w-full h-auto relative flex items-center justify-center"
+  style="clip-path: polygon(50% 0, 50% 0, 100% 20%, 100% 100%, 0 100%, 0% 20%);"
+>
+  <div
+    class="absolute top-0 w-full h-full bg-gradient-to-t from-transparent via-black/40 to-black/60 -z-10"
+  >
+  </div>
+
+  <article
+    class="container place-content-center text-white grid grid-cols-1 md:grid-cols-3 h-full gap-8"
+  >
+    <div
+      class="flex gap-2 flex-col col-span-1 text-center mt-20 pt-20 pb-8 md:pb-12 lg:pb-16"
+    >
+      <div class="flex justify-center">
+        <img
+          alt="Logo de Teclearla"
+          class="w-[250px]"
+          src="/brand/vertical-logo.svg"
+        />
+      </div>
+
+      <Paragraph>
+        Teclearla es una startup de desarrollo de paginas webs. Nos
+        especializamos en la creación de aplicaciones y sitios web de alta
+        calidad que ayudan a los negocios a crecer y alcanzar sus objetivos.
+        Nuestro compromiso con la excelencia y la satisfacción del cliente nos
+        distingue en el campo de la tecnología.
+      </Paragraph>
+
+      <Divider className="my-6" />
+
+      <div class="flex flex-col gap-2">
+        <div class="flex gap-2 items-center justify-center">
+          <MailIcon />
+          <p>teclearla@gmail.com</p>
+        </div>
+
+        <div class="flex gap-2 items-center justify-center">
+          <InstagramIcon />
+          <p>Teclearla</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Links -->
+    <div class="hidden md:block md:col-span-1"></div>
+    <div
+      class="flex flex-col gap-8 items-center justify-between col-span-1 md:mt-20 md:pt-20 md:pb-12 pb-16 text-xl"
+    >
+      <div class="flex flex-col gap-2 items-center text-center">
+        <p class="text-white font-title text-md opacity-70">LINKS</p>
+        {
+          NAV_LINKS.map((link) => (
+            <a href={link.href} class="hover:underline">
+              {link.name}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col gap-2 items-center text-center opacity-75">
+        <Paragraph>Desarrollado por nosotros mismos, obvio.</Paragraph>
+        <Paragraph>© 2024 Teclearla. Todos los derechos reservados.</Paragraph>
+      </div>
+    </div>
+  </article>
+</footer>

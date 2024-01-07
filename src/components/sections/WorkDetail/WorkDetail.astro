@@ -1,0 +1,59 @@
+---
+import ContactIcon from "@components/icons/ContactIcon.astro";
+import UsersIcon from "@components/icons/UsersIcon.astro";
+import WorldWideIcon from "@components/icons/WorldWideIcon.astro";
+import Paragraph from "@components/ui/Paragraph.astro";
+import PrimaryLink from "@components/ui/PrimaryLink.astro";
+import Header from "../../ui/Header.astro";
+import Card from "./Card.astro";
+
+const CARDS = [
+  {
+    title: "Te contactas",
+    description:
+      "Te contactas con nosotros a través de nuestro formulario de contacto, por medio de nuestro Email o Instagram. En menos de 12 horas tendrás respuesta y comenzaremos a trabajar!",
+    icon: ContactIcon,
+  },
+  {
+    title: "Charlamos",
+    description:
+      "Charlamos acerca de tu proyecto, te asesoramos y te ayudamos a encontrar la mejor solución para tu negocio. Recolectamos toda la información necesaria para comenzar a trabajar.",
+    icon: UsersIcon,
+  },
+  {
+    title: "Recibís tu página",
+    description:
+      "Te enviaremos actualizaciones sobre el progreso de la página para que siempre sepas que estamos haciendo. Tu sitio estará listo en dos semanas o menos. Se permiten modificaciones en el caso de que no te guste algo.",
+    icon: WorldWideIcon,
+  },
+];
+---
+
+<section
+  class="container grid grid-cols-1 gap-8 md:gap-4 md:grid-cols-2 animate-fade animate-ease-in"
+  id="how-it-works"
+>
+  <article class="flex flex-col gap-6">
+    <Header title="Un proceso simple y fácil" subtitle="Funcionamiento" />
+
+    <Paragraph>
+      Nunca fue mas fácil y rápido tener una pagina web. Sin contrataciones, sin
+      complicaciones y sin costos inesperados. Construye tu presencia en línea
+      de manera fácil y directa.
+    </Paragraph>
+
+    <PrimaryLink href="#contact" content="Subí de nivel tu negocio" />
+  </article>
+
+  <article class="flex flex-col gap-6">
+    {
+      CARDS.map((card) => {
+        return (
+          <Card description={card.description} title={card.title}>
+            <card.icon slot="icon" />
+          </Card>
+        );
+      })
+    }
+  </article>
+</section>

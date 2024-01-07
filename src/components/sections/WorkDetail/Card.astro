@@ -1,0 +1,29 @@
+---
+import Paragraph from "@components/ui/Paragraph.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<div class="bg-default/50 rounded-xl">
+  <div class="p-8">
+    <div class="flex flex-col gap-4">
+      <!-- Card Header -->
+      <div class="flex items-center gap-4 flex-wrap">
+        <div class="p-1 rounded-xl bg-default/90">
+          <slot name="icon" />
+        </div>
+        <h1 class="text-xl text-white md:text-2xl font-title">{title}</h1>
+      </div>
+
+      <!-- Card Body -->
+      <Paragraph>
+        {description}
+      </Paragraph>
+    </div>
+  </div>
+</div>

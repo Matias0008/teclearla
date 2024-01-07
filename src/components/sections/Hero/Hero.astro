@@ -1,0 +1,55 @@
+---
+import PrimaryLink from "@components/ui/PrimaryLink.astro";
+import { Image } from "@nextui-org/react";
+---
+
+<section id="home">
+  <article
+    class="grid md:grid-cols-2 place-content-center w-full h-full sm:gap-8 2xl:gap-32 md:container"
+    style="min-height: calc(100vh - 90px);"
+  >
+    <!-- Div for the image  -->
+    <div class="col-span-1 relative">
+      <div
+        class="hidden 2xl:block absolute bg-default/50 inset-0 w-full h-full -translate-x-[50%] translate-y-[20%] z-10"
+      >
+      </div>
+      <Image
+        client:visible
+        src="/hero.webp"
+        alt="Imagen de una persona de Adobe Stock"
+        className="z-20 relative object-cover h-full w-full rounded-none"
+        classNames={{
+          wrapper: "rounded-none h-full",
+        }}
+      />
+    </div>
+
+    <!-- Div for the text -->
+    <div
+      class="z-30 flex flex-col items-center justify-center gap-4 text-white !pb-0 col-span-1 p-[1rem] md:p-0"
+    >
+      <h1
+        class="font-bold text-center text-3xl sm:text-5xl pt-4 pb-2 overflow-hidden text-pretty font-title"
+      >
+        <span
+          class="bg-gradient-to-bl bg-no-repeat bg-bottom bg-[length:90%_40%]
+            from-primary/50 to-primary/50 dark:from-primary-blue/20 dark:to-primary-blue/70 leading-[2.5rem] sm:leading-[4rem]"
+          >Creamos sitios que<br />
+          <span class="dark:text-yellow-300">generan futuro</span></span
+        >
+      </h1>
+      <h2 class="text-lg md:text-xl text-pretty tracking-wide">
+        Hacemos que tu presencia en línea destaque, con herramientas de ultima
+        tendencia. <span class="font-bold text-yellow-300"
+          >¡Hace posible tu proyecto con nosotros!</span
+        >
+      </h2>
+      <PrimaryLink
+        content="Quiero mi web"
+        href="#contact"
+        addClass="mt-3 w-full"
+      />
+    </div>
+  </article>
+</section>

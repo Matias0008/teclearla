@@ -1,0 +1,84 @@
+---
+import Header from "@components/ui/Header.astro";
+import Paragraph from "@components/ui/Paragraph.astro";
+import PrimaryLink from "@components/ui/PrimaryLink.astro";
+
+const WEBS = [
+  {
+    title: "Landing Page",
+    description:
+      "Recomendado para aquellos que buscan destacar un producto o servicio. Captarás la atención de tus visitantes y los guiarás hacia una acción específica.",
+    image: "webs/landing-page.webp",
+    colSpan: "col-span-1 md:col-span-2",
+    isRecommended: true,
+  },
+  {
+    title: "Web básica",
+    description:
+      "Perfecto para quienes buscan establecer su presencia en línea de manera sencilla y económica. Interactividad básica para el usuario.",
+    image: "webs/basic-web.webp",
+    colSpan: "col-span-1",
+    isRecommended: false,
+  },
+  {
+    title: "Ecommerce",
+    description:
+      "Recomendado para negocios escalables que requieren de una web compleja con funcionamiento avanzado, con conexiones a sistemas externos, etc.",
+    image: "webs/ecommerce.webp",
+    colSpan: "col-span-1 md:col-span-3",
+    isRecommended: false,
+  },
+];
+---
+
+<section class="flex flex-col container gap-4 mt-24 sm:mt-36" id="webs">
+  <Header title="Estas webs realizamos" subtitle="Webs" />
+
+  <section class="grid md:grid-cols-3 gap-4 grid-rows-2 min-h-screen">
+    {
+      WEBS.map((web) => (
+        <article
+          class={`${web.colSpan} relative ${
+            web.isRecommended && "mt-4 md:mt-0"
+          }`}
+        >
+          <div
+            class={`w-full h-full flex items-end justify-center rounded-xl bg-no-repeat bg-cover`}
+            style={`background-image: url(${web.image})`}
+          >
+            <div class="z-20 text-white px-4 py-8 max-w-[60ch] flex flex-col gap-2">
+              <h1 class="text-xl md:text-3xl font-title text-center">
+                {web.title}
+              </h1>
+              <Paragraph addClass="text-pretty text-center">
+                {web.description}
+              </Paragraph>
+            </div>
+            {web.isRecommended && (
+              <div class="absolute w-max h-max top-[-20px] md:inset-0 border-[#fe4a23] border-2 rounded-tl-xl bg-white rounded-br-xl z-20 flex items-center justify-center">
+                <p class="text-black font-bold px-4 py-2">Más pedido</p>
+              </div>
+            )}
+          </div>
+
+          <div class="absolute inset-0 w-full h-full rounded-xl bg-gradient-to-b from-transparent via-black/90 to-black" />
+          <div class="absolute inset-0 w-full h-full rounded-xl bg-gradient-to-t from-transparent via-black/90 to-black/50" />
+        </article>
+      ))
+    }
+    <div
+      class="bg-[#0e1820] w-full px-6 py-12 flex items-center justify-center flex-col gap-8 rounded-xl col-span-1 md:col-span-3 mb-12"
+    >
+      <h2
+        class="text-white font-bold text-3xl md:text-5xl font-title text-center"
+      >
+        ¿Tenes alguna duda?
+      </h2>
+      <p class="text-white text-lg max-w-[60ch] text-center">
+        No te preocupes, si no sabes cual es el tipo de pagina que te conviene
+        nosotros te podemos asesorar. ¡Rellena el formulario y te contactaremos!
+      </p>
+      <PrimaryLink href="#contact" content="Consultar" />
+    </div>
+  </section>
+</section>

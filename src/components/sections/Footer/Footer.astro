@@ -3,7 +3,7 @@ import { NAV_LINKS } from "@components/NextNavbar";
 import InstagramIcon from "@components/icons/InstagramIcon.astro";
 import MailIcon from "@components/icons/MailIcon.astro";
 import Paragraph from "@components/ui/Paragraph.astro";
-import { Divider } from "@nextui-org/react";
+import { Divider, Image } from "@nextui-org/react";
 ---
 
 <footer
@@ -22,10 +22,13 @@ import { Divider } from "@nextui-org/react";
       class="flex gap-2 flex-col col-span-1 text-center mt-20 pt-20 pb-8 md:pb-12 lg:pb-16"
     >
       <div class="flex justify-center">
-        <img
+        <Image
+          client:visible
           alt="Logo de Teclearla"
-          class="w-[250px]"
+          title="Logo vertical de Teclearla"
           src="/brand/vertical-logo.svg"
+          className="w-[250px]"
+          title="Logo de Teclearla"
         />
       </div>
 

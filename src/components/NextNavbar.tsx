@@ -1,4 +1,5 @@
 import {
+  Image,
   Link,
   Navbar,
   NavbarBrand,
@@ -54,10 +55,11 @@ export default function NextNavbar() {
           href="#home"
           aria-label="Ir al inicio de la pagina tocando la imagen"
         >
-          <img
+          <Image
             src="/brand/horizontal-logo.svg"
             className="w-full h-[90px]"
-            alt="Logo de Teclearla"
+            alt="Logo horizontal de Teclearla"
+            title="Logo horizontal de Teclearla"
           />
         </a>
       </NavbarBrand>
@@ -67,9 +69,10 @@ export default function NextNavbar() {
           href="#home"
           aria-label="Ir al inicio de la pagina tocando la imagen"
         >
-          <img
+          <Image
             src="/brand/horizontal-logo.svg"
-            alt="Logo de Teclearla"
+            alt="Logo horizontal de Teclearla"
+            title="Logo horizontal de Teclearla"
             className="h-[60px]"
           />
         </a>

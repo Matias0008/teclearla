@@ -48,7 +48,7 @@ export const POST: APIRoute = async ({ request }: Props) => {
   const { email, fullname, message, phone } = body;
 
   resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "contacto@teclearla.com.ar",
     to: `${import.meta.env.RESEND_TO}`,
     subject: "Nueva consulta de Teclearla",
     html: `<p>
@@ -60,7 +60,7 @@ export const POST: APIRoute = async ({ request }: Props) => {
   });
 
   resend.emails.send({
-    from: "onboarding@resend.dev",
+    from: "contacto@teclearla.com.ar",
     to: `${email}`,
     subject: "Gracias por contactarte con Teclearla",
     html: `<h1>Hola, ${fullname}</h1>

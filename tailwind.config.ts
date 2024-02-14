@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const { nextui } = require("@nextui-org/react");
+import { nextui } from "@nextui-org/react";
 
 export default {
   content: [
@@ -24,7 +24,7 @@ export default {
   plugins: [
     nextui(),
     require("tailwindcss-animated"),
-    ({ addComponents }) => {
+    ({ addComponents }: { addComponents: any }) => {
       addComponents({
         ".container": {
           maxWidth: "1400px",

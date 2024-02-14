@@ -2,6 +2,7 @@
 import { ContactForm } from "@components/ContactForm";
 import Header from "@components/ui/Header.astro";
 import Paragraph from "@components/ui/Paragraph.astro";
+import { Image } from "astro:assets";
 ---
 
 <section class="container mt-12 flex flex-col gap-4" id="contact">
@@ -18,14 +19,14 @@ import Paragraph from "@components/ui/Paragraph.astro";
     <!-- Form -->
     <ContactForm client:visible />
 
-    <div class="w-full min-h-[300px] md:h-auto">
-      <iframe
-        title="Mapa de ubicación de Villa María, Córdoba, Argentina"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53888.01409698718!2d-63.2804192225193!3d-32.41913449139107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cc42fb51306dc1%3A0xbfb3fffbd425c6b1!2zVmlsbGEgTWFyw61hLCBDw7NyZG9iYQ!5e0!3m2!1ses!2sar!4v1703998701197!5m2!1ses!2sar"
-        style="border:0;"
-        class="w-full h-full"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="w-full h-full">
+      <Image
+        src="/equipo-web.jpg"
+        alt="Imagen de un equipo web"
+        width={300}
+        height={300}
+        class="w-full h-full object-cover"
+      />
     </div>
   </article>
 </section>

@@ -7,7 +7,7 @@ import { Divider, Image } from "@nextui-org/react";
 ---
 
 <footer
-  class="w-full h-auto relative flex items-center justify-center"
+  class="relative flex items-center justify-center w-full h-auto"
   style="clip-path: polygon(50% 0, 50% 0, 100% 20%, 100% 100%, 0 100%, 0% 20%);"
 >
   <div
@@ -16,10 +16,10 @@ import { Divider, Image } from "@nextui-org/react";
   </div>
 
   <article
-    class="container place-content-center text-white grid grid-cols-1 md:grid-cols-3 h-full gap-8"
+    class="container grid h-full grid-cols-1 gap-8 text-white place-content-center md:grid-cols-3"
   >
     <div
-      class="flex gap-2 flex-col col-span-1 text-center mt-20 pt-20 pb-8 md:pb-12 lg:pb-16"
+      class="flex flex-col col-span-1 gap-2 pt-20 pb-8 mt-20 text-center md:pb-12 lg:pb-16"
     >
       <div class="flex justify-center">
         <Image
@@ -36,19 +36,17 @@ import { Divider, Image } from "@nextui-org/react";
         Teclearla es una startup de desarrollo de paginas webs. Nos
         especializamos en la creación de aplicaciones y sitios web de alta
         calidad que ayudan a los negocios a crecer y alcanzar sus objetivos.
-        Nuestro compromiso con la excelencia y la satisfacción del cliente nos
-        distingue en el campo de la tecnología.
       </Paragraph>
 
       <Divider className="my-6" />
 
       <div class="flex flex-col gap-2">
-        <div class="flex gap-2 items-center justify-center">
+        <div class="flex items-center justify-center gap-2">
           <MailIcon />
           <p>teclearla@gmail.com</p>
         </div>
 
-        <div class="flex gap-2 items-center justify-center">
+        <div class="flex items-center justify-center gap-2">
           <InstagramIcon />
           <p>Teclearla</p>
         </div>
@@ -58,10 +56,12 @@ import { Divider, Image } from "@nextui-org/react";
     <!-- Links -->
     <div class="hidden md:block md:col-span-1"></div>
     <div
-      class="flex flex-col gap-8 items-center justify-between col-span-1 md:mt-20 md:pt-20 md:pb-12 pb-16 text-xl"
+      class="flex flex-col items-center justify-between col-span-1 gap-8 pb-16 text-xl md:mt-20 md:pt-20 md:pb-12"
     >
-      <div class="flex flex-col gap-2 items-center text-center">
-        <p class="text-white font-title text-md opacity-70">LINKS</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-xl font-bold text-white uppercase opacity-70">
+          Volve a visitar
+        </p>
         {
           NAV_LINKS.map((link) => (
             <a href={link.href} class="hover:underline">
@@ -71,7 +71,7 @@ import { Divider, Image } from "@nextui-org/react";
         }
       </div>
 
-      <div class="flex flex-col gap-2 items-center text-center opacity-75">
+      <div class="flex flex-col items-center gap-2 text-center opacity-75">
         <Paragraph>Desarrollado por nosotros mismos, obvio.</Paragraph>
         <Paragraph>© 2024 Teclearla. Todos los derechos reservados.</Paragraph>
       </div>

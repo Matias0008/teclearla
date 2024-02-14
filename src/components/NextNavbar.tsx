@@ -89,7 +89,7 @@ export default function NextNavbar() {
 
       <NavbarContent className="hidden w-full gap-4 lg:flex items-center md:!justify-between">
         {NAV_LINKS.map((link) => (
-          <NavbarItem key={link.name} className="text-xl">
+          <NavbarItem key={link.name} className="text-lg">
             <a href={link.href} className="hover:underline">
               {link.name}
             </a>
@@ -100,7 +100,7 @@ export default function NextNavbar() {
       <NavbarContent className="hidden lg:flex">
         <li>
           <Link
-            className={`cursor-pointer z-10 text-white bg-primary px-12 py-3 rounded-xl text-md justify-center`}
+            className={`cursor-pointer z-10 text-white bg-primary px-8 xl:px-12 py-3 rounded-xl text-md justify-center`}
             href="#contact"
           >
             Quiero mi web

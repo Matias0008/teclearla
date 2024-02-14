@@ -3,7 +3,7 @@ import { NAV_LINKS } from "@components/NextNavbar";
 import InstagramIcon from "@components/icons/InstagramIcon.astro";
 import MailIcon from "@components/icons/MailIcon.astro";
 import Paragraph from "@components/ui/Paragraph.astro";
-import { Divider, Image } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 ---
 
 <footer
@@ -19,7 +19,7 @@ import { Divider, Image } from "@nextui-org/react";
     class="container grid h-full grid-cols-1 gap-8 text-white place-content-center md:grid-cols-3"
   >
     <div
-      class="flex flex-col col-span-1 gap-2 pt-20 pb-8 mt-20 text-center md:pb-12 lg:pb-16"
+      class="flex flex-col col-span-1 gap-2 pt-20 pb-8 mt-20 text-center md:pb-12 lg:pb-16 items-center"
     >
       <div class="flex justify-center">
         <Image
@@ -32,14 +32,12 @@ import { Divider, Image } from "@nextui-org/react";
         />
       </div>
 
-      <Paragraph>
+      <Paragraph addClass="max-w-[40ch] text-center">
         Nos especializamos en la creación de aplicaciones y sitios web de alta
         calidad que ayudan a los negocios a crecer y alcanzar sus objetivos.
       </Paragraph>
 
-      <Divider className="my-6" />
-
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 mt-4">
         <div class="flex items-center justify-center gap-2">
           <MailIcon />
           <p>teclearla@gmail.com</p>

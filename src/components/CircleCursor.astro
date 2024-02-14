@@ -1,0 +1,33 @@
+<div
+  class="circle-outline w-8 h-8 border-2 border-secondary rounded-full fixed top-0 z-50 pointer-events-none hidden"
+>
+  <div
+    class="circle-dot absolute bottom-[50%] w-2 h-2 bg-secondary rounded-full"
+    style="left: calc(50% - 0.25rem); bottom: calc(50% - 0.25rem)"
+  >
+  </div>
+</div>
+
+<script is:inline>
+  const circle = document.querySelector(".circle-outline");
+  const dot = document.querySelector(".circle-dot");
+
+  window.addEventListener("mousemove", (e) => {
+    circle.classList.remove("hidden");
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    circle.style.left = `${posX - 16}px`;
+    circle.style.top = `${posY - 16}px`;
+    circle.animate(
+      {
+        left: `${posX - 16}px`,
+        top: `${posY - 16}px`,
+      },
+      {
+        duration: 100,
+        fill: "forwards",
+      }
+    );
+  });
+</script>

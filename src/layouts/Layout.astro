@@ -41,18 +41,14 @@ const { title, description } = Astro.props;
       name="keywords"
       content="Teclearla, desarrolla tu sitio web, web, quiero mi pagina web, pagina web,  tener tu pagina web nunca fue tan fácil, hacer mi pagina web, pagina web barata, pagina web fácil, pagina web calidad, hacemos tu pagina web, pagina web profesional, pagina web profesional barata, pagina web profesional fácil, pagina web profesional calidad, pagina web profesional barata fácil, pagina web profesional barata calidad, pagina web profe, teclearla, teclearla villa maria"
     />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/shortcut-icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
   </head>
 
   <body
     class="w-full min-h-screen bg-[#1A2530] dark animate-fade animate-ease-in"
   >
-    <!-- <div
-      class="absolute top-0 w-full h-full bg-gradient-to-t from-transparent via-black/20 to-black/80"
-    >
-    </div> -->
-    <!-- <Navbar /> -->
     <NextNavbar client:visible />
     <slot />
   </body>

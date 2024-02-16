@@ -113,7 +113,7 @@ export default function NextNavbar() {
         id="navmenu"
       >
         {NAV_LINKS.map((link) => (
-          <NavbarMenuItem key={link.name} className="text-xl">
+          <NavbarMenuItem key={link.name} className="text-3xl">
             <a
               href={link.href}
               className="hover:underline z-90 text-white"
@@ -123,6 +123,12 @@ export default function NextNavbar() {
             </a>
           </NavbarMenuItem>
         ))}
+        <Link
+          className={`cursor-pointer z-10 text-white bg-primary px-8 xl:px-12 py-4 rounded-xl text-xl justify-center mt-8`}
+          href="#contact"
+        >
+          Quiero mi web
+        </Link>
       </NavbarMenu>
     </Navbar>
   );

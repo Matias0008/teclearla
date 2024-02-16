@@ -1,6 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"svg"> {}
+const { class: className, ...rest } = Astro.props;
+---
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  class="icon icon-tabler icon-tabler-brand-instagram"
   width="34"
   height="34"
   viewBox="0 0 24 24"
@@ -9,6 +15,8 @@
   fill="none"
   stroke-linecap="round"
   stroke-linejoin="round"
+  class={className}
+  {...rest}
 >
   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
   <path

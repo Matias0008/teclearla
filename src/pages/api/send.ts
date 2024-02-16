@@ -1,7 +1,7 @@
 import {
   ContactFormSchema,
   type ContactFormType,
-} from "@components/ContactForm";
+} from "@components/shared/ContactForm";
 import type { APIContext, APIRoute } from "astro";
 import { RateLimiterMemory } from "rate-limiter-flexible";
 import { ResendSingleton } from "../../classes/Resend";

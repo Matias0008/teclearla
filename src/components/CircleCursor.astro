@@ -10,24 +10,27 @@
 
 <script is:inline>
   const circle = document.querySelector(".circle-outline");
-  const dot = document.querySelector(".circle-dot");
 
-  window.addEventListener("mousemove", (e) => {
-    circle.classList.remove("hidden");
-    const posX = e.clientX;
-    const posY = e.clientY;
+  if (navigator.maxTouchPoints === 0) {
+    window.addEventListener("mousemove", (e) => {
+      if (window.innerWidth <= 500) return;
 
-    circle.style.left = `${posX - 16}px`;
-    circle.style.top = `${posY - 16}px`;
-    circle.animate(
-      {
-        left: `${posX - 16}px`,
-        top: `${posY - 16}px`,
-      },
-      {
-        duration: 100,
-        fill: "forwards",
-      }
-    );
-  });
+      circle.classList.remove("hidden");
+      const posX = e.clientX;
+      const posY = e.clientY;
+
+      circle.style.left = `${posX - 16}px`;
+      circle.style.top = `${posY - 16}px`;
+      circle.animate(
+        {
+          left: `${posX - 16}px`,
+          top: `${posY - 16}px`,
+        },
+        {
+          duration: 100,
+          fill: "forwards",
+        }
+      );
+    });
+  }
 </script>
